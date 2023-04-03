@@ -1,0 +1,135 @@
+﻿focus_tree = {
+	id = finnish_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = FIN
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 1000 }
+
+
+
+	############################
+	####### ARMY SECTION #######
+	############################
+
+	focus = {
+		id = FIN_is_great
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 2
+		y = 0
+		allow_branch = {has_political_power > 5}
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = AST_additional_militia_training
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = FIN_is
+		icon = GFX_goal_FIN_is
+		x = 0
+		y = 1
+		relative_position_id = FIN_is_great
+
+		cost = 1
+		prerequisite = {focus = FIN_is_great}
+		mutually_exclusive = {focus = my_ass}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = AST_additional_militia_training
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = my_ass
+		icon = GFX_goal_FIN_is
+		x = 4
+		y = 1
+		relative_position_id = FIN_is_great
+		mutually_exclusive = {focus = FIN_is}
+
+		cost = 1
+		prerequisite = {focus = FIN_is_great}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = AST_additional_militia_training
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+}		
